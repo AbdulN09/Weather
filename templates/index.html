@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Weather App</h2>
+        <form action="{% url 'demo' %}" method="POST">
+            {% csrf_token %}
+            <label for="cityname">City Name</label>
+            <input type="text" id="cityname" name="cityname" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
